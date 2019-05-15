@@ -6,4 +6,4 @@ before_install:
   - docker build -t e3cd/docker-travis-aws -f Dockerfile.dev .
 
 script:
-  - docker run e3cd/docker-travis-aws npm run test -- --coverage
+  - docker run -e CI=true e3cd/docker-travis-aws npm run test -- --watchAll=false
